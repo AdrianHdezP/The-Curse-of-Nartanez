@@ -16,7 +16,7 @@ public class Entity : MonoBehaviour
 
     public virtual void Update()
     {
- 
+        Debug.Log(isGrounded);
     }
 
     #region Collisions

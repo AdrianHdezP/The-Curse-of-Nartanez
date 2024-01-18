@@ -48,7 +48,7 @@ public class Enemy_Necrofago : MonoBehaviour
         }
 
         // Velocidad aleatoria de cada enemigo
-        navMeshAgent.speed = Random.Range(3, 5);
+        navMeshAgent.speed = Random.Range(4, 6);
     }
 
     private void Update()

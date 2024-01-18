@@ -46,7 +46,7 @@ public class Player : Entity
     [SerializeField]  private float sprintSpeed;
     [SerializeField]  private Transform orientation;
     [HideInInspector] public Vector3 moveDirection;
-    [HideInInspector] private float groundDrag = 5;
+    [HideInInspector] private float groundDrag = 6;
     
     [Header("Dash Config")]
     public DashType dashType;
@@ -122,8 +122,6 @@ public class Player : Entity
         base.Update();
 
         stateMachine.currentState.Update();
-
-        Debug.Log(health);
         
         PlayerInput();
 
@@ -133,7 +131,9 @@ public class Player : Entity
         if (isGrounded)
             rb.drag = groundDrag;
         else
-            rb.drag = 0;
+            rb.drag = groundDrag;
+
+        Debug.Log(rb.drag);
     }
 
     #region Inputs
